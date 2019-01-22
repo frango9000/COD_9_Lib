@@ -74,7 +74,7 @@ public abstract class IO {
     }
 
     public static int stringToInt(String str) {
-        return Integer.parseInt(str);
+        return isInteger(str) ? Integer.parseInt(str) : null;
     }
 
     public static boolean isFloat(String str) {
