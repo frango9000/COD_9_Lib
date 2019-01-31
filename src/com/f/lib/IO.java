@@ -19,9 +19,7 @@ public abstract class IO implements Mostrable{
      * @param msg String a ser mostrado por ventana
      * @param title String a ser titulo de la ventana
      */
-    public static void output(String title, String msg) {
-        JOptionPane.showMessageDialog(null, msg, title, 0);
-    }
+    //public abstract void output(String title, String msg);
 
     /**
      * Devuelve un String introducido por consola
