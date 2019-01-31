@@ -3,16 +3,15 @@ package com.f.lib;
 import javax.swing.*;
 import java.util.Scanner;
 
-public abstract class IO {
+public abstract class IO implements Mostrable{
 
     /**
      * Muestra un mensage por consola
      * 
      * @param msg String a ser mostrado por consola
      */
-    public static void output(String msg) {
-        System.out.println(msg);
-    }
+    @Override
+    public abstract void output(String msg);
 
     /**
      * Muestra un mensage por ventana de JOptionPane
@@ -40,10 +39,10 @@ public abstract class IO {
      * @param msg String a ser mostrado
      * @return String
      */
-    public static String input(String msg) {
-        output(msg);
-        return new Scanner(System.in).next();
-    }
+//    public static String input(String msg) {
+//        output(msg);
+//        return new Scanner(System.in).next();
+//    }
 
     /**
      * Muestra un mensaje por ventana solicitando introducir datos Devuelve un
@@ -96,5 +95,23 @@ public abstract class IO {
         } catch (NumberFormatException e) {
             return false;
         }
+    }
+    
+    public enum Tipo{CONSOLA, VENTANA}
+    
+    public static IO crearIO(Tipo tipo){
+        IO io;
+        switch(tipo){
+            case CONSOLA:
+                io = new ConsIO();
+                break;
+            case VENTANA:
+                io = new VentIO();
+                break;
+            default:                
+                io = new ConsIO();
+                break;
+        }
+        return io;        
     }
 }
