@@ -14,14 +14,6 @@ public abstract class IO implements Mostrable{
     public abstract void output(String msg);
 
     /**
-     * Muestra un mensage por ventana de JOptionPane
-     *
-     * @param msg String a ser mostrado por ventana
-     * @param title String a ser titulo de la ventana
-     */
-    //public abstract void output(String title, String msg);
-
-    /**
      * Devuelve un String introducido por consola
      *
      * @return String
@@ -29,18 +21,6 @@ public abstract class IO implements Mostrable{
     public static String input() {
         return new Scanner(System.in).next();
     }
-
-    /**
-     * Muestra un mensaje por consola solicitando introducir datos por consola
-     * Devuelve un String introducido por consola
-     * 
-     * @param msg String a ser mostrado
-     * @return String
-     */
-//    public static String input(String msg) {
-//        output(msg);
-//        return new Scanner(System.in).next();
-//    }
 
     /**
      * Muestra un mensaje por ventana solicitando introducir datos Devuelve un
@@ -94,9 +74,15 @@ public abstract class IO implements Mostrable{
             return false;
         }
     }
-    
+    /**
+     * enumerador para determinar si esta clase se instancia haciendo referencia a salidas de texto por consola o por ventanas joptionpane
+     */
     public enum Tipo{CONSOLA, VENTANA}
-    
+    /**
+     * metodo que devuelve un objeto de la clase IO ya creado depende del tipo de salida que necesite quien utilice el metodo
+     * @param tipo TIPO (CONSOLA, VENTANA)
+     * @return instanceof IO
+     */
     public static IO crearIO(Tipo tipo){
         IO io;
         switch(tipo){

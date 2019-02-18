@@ -13,7 +13,11 @@ public class VentIO extends IO{
         output(msg, "Titulo");
     }
 
-    
+    /**
+     * salida de texto por joptionpane
+     * @param msg texto a mostrar
+     * @param titulo de la ventana
+     */
     public void output(String msg, String titulo){
         JOptionPane.showMessageDialog(null, msg, "titulo", 0);
         //JOptionPane.showIn
