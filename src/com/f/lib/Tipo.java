@@ -6,7 +6,8 @@
 package com.f.lib;
 
 /**
- * enumerador para determinar si esta clase se instancia haciendo referencia a salidas de texto por consola o por ventanas joptionpane
+ * enumerador para determinar si IO instancia haciendo referencia a 
+ * salidas de texto por consola o por ventanas joptionpane
  */
 public enum Tipo {
     CONSOLA, VENTANA
