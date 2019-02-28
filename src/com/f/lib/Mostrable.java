@@ -15,4 +15,18 @@ public interface Mostrable {
      * @param msg 
      */
     public void output(String msg);
+    
+    /**
+     * metodo abstracto para entrada de texto implementable en otras clases
+     */
+    public abstract String input();
+
+    /**
+     * metodo abstracto para entrada de texto implementable en otras clases
+     * que muestra un mensaje indicando al usuario lo que debe introducir
+     *
+     * @param msg String a ser mostrado
+     * @return String introducido
+     */
+    public abstract String input(String msg);
 }
